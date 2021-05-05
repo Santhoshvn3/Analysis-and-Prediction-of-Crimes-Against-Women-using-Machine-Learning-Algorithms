@@ -1,0 +1,7 @@
+.container-fluid {
+    padding-top: 80px;
+    margin-left: 0px;
+}
+.search_select_box select{
+    width: 100%;
+}

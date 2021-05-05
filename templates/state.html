@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/state.css">
+    <title>Crime analysis and Prediction</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Crime Analysis <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./state.html">States </a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Zone</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+    </nav> 
+    <!-- body starts -->
+    <div class="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="leftCtn">
+                        <form class="myForm text-center" action="./analysis" method="POST">
+                        <header>SELECT THE STATE</header>
+                        <div class="form-group row">
+                            <label for="" class="col-md-6 form-control-label myInput">choose state</label>
+                            <div class="col-sm-10">
+                            <select class="form-control selectpicker myInput" id="select-country" data-live-search="true">
+                                <option data-tokens="Andra Pradesh">Andra Pradesh</option>
+                                <option data-tokens="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option data-tokens="Assam">Assam</option>
+                                <option data-tokens="Bihar">Bihar</option>
+                                <option data-tokens="Chhattisgrah">Chhattisgrah</option>
+                                <option data-tokens="Goa">Goa</option>
+                                <option data-tokens="Gujarat">Gujarat</option>
+                                <option data-tokens="Haryana">Haryana</option>
+                                <option data-tokens="Himachal Pradesh">Himachal Pradesh</option>
+                                <option data-tokens="Jharkhand">Jharkhand</option>
+                                <option data-tokens="Karnataka">Karnataka</option>
+                                <option data-tokens="Kerala">Kerala</option>
+                                <option data-tokens="Madhya Pradesh">Madhya Pradesh</option>
+                                <option data-tokens="Maharastra">Maharastra</option>
+                                <option data-tokens="Manipur">Manipur</option>
+                                <option data-tokens="Meghalaya">Meghalaya</option>
+                                <option data-tokens="Mizoram">Mizoram</option>
+                                <option data-tokens="Nagaland">Nagaland</option>
+                                <option data-tokens="Odisha">Odisha</option>
+                                <option data-tokens="Punjab">Punjab</option>
+                                <option data-tokens="Rajasthan">Rajasthan</option>
+                                <option data-tokens="Sikkim">Sikkim</option>
+                                <option data-tokens="Tamil Nadu">Tamil Nadu</option>
+                                <option data-tokens="Telangana">Telangana</option>
+                                <option data-tokens="Tripura">Tripura</option>
+                                <option data-tokens="Uttarakhand">Uttarakhand</option>
+                                <option data-tokens="Uttar Pradesh">Uttar Pradesh</option>
+                                <option data-tokens="West Bengal">West Bengal</option>
+                            </select>
+                            </div>
+                        </div>
+                        <input type="submit" class="butt" value="Analyze" id="myButton"> 
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="rightCtn">
+                        <!-- <header>State Analysis</header> -->
+                        <div class="box">
+                            <header>Women Crime Analysis of the States</header>
+                            <p>
+                                analayze the state crime rate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </div>     
+                
+    
+      
+<!-- script bootstrap -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- select api -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<!-- select picker -->
+<script>
+  $(function() {
+    $('.selectpicker').selectpicker();
+  });
+
+  document.getElementById("myButton").onclick = function () {
+    location.href = "./analysis.html";
+  };
+</script>
+</body>
+</html>
