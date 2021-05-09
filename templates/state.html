@@ -28,13 +28,9 @@
               <a class="nav-link" href="./state.html">States </a></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Zone</a>
+              <a class="nav-link" href="">Admin </a></a>
             </li>
           </ul>
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
         </div>
     </nav> 
     <!-- body starts -->
@@ -44,7 +40,7 @@
                 <div class="col-md-6">
                     <div class="leftCtn">
                         <form class="myForm text-center" action="./analysis" method="POST">
-                        <header>SELECT THE STATE</header>
+                        <header>SELECT THE INPUT</header>
                         <div class="form-group row">
                             <label for="" class="col-md-6 form-control-label myInput">choose state</label>
                             <div class="col-sm-10">
@@ -79,6 +75,22 @@
                                 <option data-tokens="West Bengal">West Bengal</option>
                             </select>
                             </div>
+                            <label for="" class="col-md-6 form-control-label myInput">choose year</label>
+                              <select class="form-control selectpicker myInput" id="select-country" data-live-search="false">
+                                <option data-tokens="2020">2020</option>
+                                <option data-tokens="2021">2021</option>
+                                <option data-tokens="2022">2022</option>
+                                <option data-tokens="2023">2023</option>
+                                <option data-tokens="2024">2024</option>
+                              </select>
+                              <label for="" class="col-md-6 form-control-label myInput">choose crime type</label>
+                              <select class="form-control selectpicker myInput" id="select-country" data-live-search="false">
+                                <option data-tokens=""></option>
+                                <option data-tokens=""></option>
+                                <option data-tokens=""></option>
+                                <option data-tokens=""></option>
+                                <option data-tokens=""></option>
+                              </select>
                         </div>
                         <input type="submit" class="butt" value="Analyze" id="myButton"> 
                         </form>
@@ -118,5 +130,6 @@
     location.href = "./analysis.html";
   };
 </script>
+
 </body>
 </html>
