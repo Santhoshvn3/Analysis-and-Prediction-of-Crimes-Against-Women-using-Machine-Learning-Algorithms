@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="card-wrapper">
+    <div class="card">
+        <center>
+        <h1 class="center">Login To Account</h1><br><br>
+        <form name="login_form" method="POST">
+
+            <label for="email">Email</label><br>
+            <input type="text" name="email" class="field" required><br><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" name="password" class="field" required><br><br>
+
+            <p class="error error--hidden">
+
+            </p><br>
+
+            <a href="/dashboard">Login</a>
+
+            <!-- <a href="admin.html">Signup</a> -->
+        </form>
+        </center>
+    </div>
+</div>
+
+
+{% endblock %}
