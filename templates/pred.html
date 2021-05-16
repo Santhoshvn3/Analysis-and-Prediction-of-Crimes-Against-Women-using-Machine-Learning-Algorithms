@@ -1,43 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../static/state.css"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='state.css') }}">
+
+    <title>Crime analysis and Prediction</title>
 </head>
 <body>
-<section id="section10">
-    <div class="container">
-            <center><h1>PREDICTIONS</h1></center>
-            <div class="doc">
-                <section id="menu1">
-                    <a href="#menu1">CRIME AGAINST WOMEN</a>
-                    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
 
-                        
-                    <center>
-		  	                <form action="women.html" method="POST">
-                            <h3 style = "font-family:verdana; padding-left: 0%; text-align:left">Select the year, crime type and state of your choice for appropriate predictions:</h3><br>
-                            
-                            <select name = "Predict_Year" style="padding-top:20px;">
-                                <option value=""><h2>Select Year</h2> </option>
-                                <option value="2017"><h2>2020</h2> </option>
-                                <option value="2016"><h2>2021</h2> </option>
-                                <option value="2015"><h2>2022</h2> </option>
-                                <option value="2014"><h2>2023</h2> </option>
-                            </select>
-                            <br>
-                            
-                            <select name = "C_Type" style="padding-top:20px;">
-                                <option value="RAPE"><h2>Select Crime Type (Default - Rape)</h2> </option>
-                                <option value="RAPE"><h2>RAPE</h2> </option>
-                                <option value="KIDNAPPING & ABDUCTION"><h2>KIDNAPPING & ABDUCTION</h2> </option>
-                                <option value="DOWRY DEATH"><h2>DOWRY DEATH</h2> </option>
-                                <option value="ASSAULT ON WOMEN WITH INTENT TO OUTRAGE HER MODESTY"><h2>ASSAULT ON WOMEN</h2> </option>
-                                <option value="INSULT TO THE MODESTY OF WOMEN"><h2>INSULT TO THE MODESTY OF WOMEN</h2> </option>
-                                <option value="CRUELTY BY HUSBAND OR RELATIVES"><h2>CRUELTY BY HUSBAND OR RELATIVES</h2> </option>
-                                <option value="TOTAL CRIMES AGAINST WOMEN"><h2>TOTAL CRIMES AGAINST WOMEN</h2> </option> 
-                            </select>
-                            <br>
-                            
-                            <select name = "state" style="padding-top:20px;">
-                                <option value="INDIA"><h2>Select States (Default - ALL STATES)</h2> </option>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="analysis.html">Crime Analysis <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="pred.html">Predictions</a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/signup">Admin </a></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- body starts -->
+
+ <div class="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="leftCtn">
+                        <form class="myForm text-center" action="women.html" method="POST">
+                        <header>SELECT THE INPUT</header>
+                        <div class="form-group row">
+                            <label for="" class="col-md-6 form-control-label myInput" >choose state</label>
+                            <div class="col-sm-10">
+                            <select class="form-control selectpicker myInput" id="select-country" data-live-search="true" name = "state">
+                                                             <option value="INDIA"><h2>Select States (Default - ALL STATES)</h2> </option>
                                 <option value="INDIA"><h2>ALL STATES</h2> </option>
                                 <option value="Andhra Pradesh"><h2>Andhra Pradesh</h2> </option>
                                 <option value="Arunachal Pradesh"><h2>Arunachal Pradesh</h2> </option>
@@ -74,14 +85,65 @@
                                 <option value="Delhi UT"><h2>Delhi UT</h2> </option>
                                 <option value="Lakshadweep"><h2>Lakshadweep</h2> </option>
                                 <option value="Puducherry"><h2>Puducherry</h2> </option>
+                            </select>
+                            </div>
+                            <label for="" class="col-md-6 form-control-label myInput" >choose year</label>
+                              <select class="form-control selectpicker myInput" id="select-country" data-live-search="false" name = "Predict_Year">
+                                    <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                              </select>
+                              <label for="" class="col-md-6 form-control-label myInput" >choose crime type</label>
+                              <select class="form-control selectpicker myInput" name = "C_Type" data-live-search="false">
+                                <option value="RAPE"><h2>Select Crime Type (Default - Rape)</h2> </option>
+                                <option value="RAPE"><h2>RAPE</h2> </option>
+                                <option value="KIDNAPPING & ABDUCTION"><h2>KIDNAPPING & ABDUCTION</h2> </option>
+                                <option value="DOWRY DEATH"><h2>DOWRY DEATH</h2> </option>
+                                <option value="ASSAULT ON WOMEN WITH INTENT TO OUTRAGE HER MODESTY"><h2>ASSAULT ON WOMEN</h2> </option>
+                                <option value="INSULT TO THE MODESTY OF WOMEN"><h2>INSULT TO THE MODESTY OF WOMEN</h2> </option>
+                                <option value="CRUELTY BY HUSBAND OR RELATIVES"><h2>CRUELTY BY HUSBAND OR RELATIVES</h2> </option>
+                                <option value="TOTAL CRIMES AGAINST WOMEN"><h2>TOTAL CRIMES AGAINST WOMEN</h2> </option>
+                              </select>
+                        </div>
+                        <input type="submit" class="butt" value="Analyze" id="myButton">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="rightCtn">
+                        <!-- <header>State Analysis</header> -->
+                        <div class="box">
+                            <header>Women Crime Analysis of the States</header>
+                            <p>
+                                analayze the state crime rate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                </select>
 
-		  	                <br>
-		  	                <input type="submit" value="Submit">
-                            </form>
-                    </center>   
-                </section>
+<!-- script bootstrap -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- select api -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<!-- select picker -->
+<script>
+  $(function() {
+    $('.selectpicker').selectpicker();
+  });
+
+  document.getElementById("myButton").onclick = function () {
+    location.href = "./analysis.html";
+  };
+</script>
 
 </body>
 </html>

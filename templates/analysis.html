@@ -1,23 +1,239 @@
+
 <!DOCTYPE html>
-    <head>
-    <title>Minor Project</title>
-    <img src="/static/logo.png" width="100px" height="100px">
-     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="../static/state.css"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='state.css') }}">
+
+    <title>Crime analysis and Prediction</title>
 </head>
 <body>
-<ul>
-       <li><a href="/">Home</a></li>
-    <li><a href="analysis.html">Predict Analysis</a></li>
-</ul>
-<br>
-<li><a href="year_analysis.html">Yearwise Prediction</a></li>
-<li><a href="state.html">Statewise/ZoneWise Prediction</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="analysis.html">Crime Analysis <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="pred.html">Predictions</a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/signup">Admin </a></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- body starts -->
+
+ <div class="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="leftCtn">
+                        <form class="myForm text-center" action="women.html" method="POST">
+                        <header>Year Wise Analysis</header>
+                        <div class="form-group row">
+<li><a href="#"  data-toggle="modal" data-target="#myModal">Crime Each Year </a></li>
+<div id="myModal" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/crime_each_year.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+<li><a href="#1"  data-toggle="modal" data-target="#myModal2">Rape Cases of Women  </a></li>
+<div id="myModal2" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/rape_yearwise.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+<li><a href="#"  data-toggle="modal" data-target="#myModal3">Assault On Women</a></li>
+<div id="myModal3" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_assault.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<li><a href="#"  data-toggle="modal" data-target="#myModal4">Cruelty By Husband </a></li>
+<div id="myModal4" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_cruely_by_husband.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<li><a href="#"  data-toggle="modal" data-target="#myModal5">Dowry deaths </a></li>
+<div id="myModal5" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_dowry.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<li><a href="#"  data-toggle="modal" data-target="#myModal6">Importation Of Girls</a></li>
+<div id="myModal6" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_importation_of girls.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+<li><a href="#"  data-toggle="modal" data-target="#myModal7">Insult to Modesty</a></li>
+<div id="myModal7" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_insult_to_modesty.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<li><a href="#"  data-toggle="modal" data-target="#myModal8">Kidnapping and Abduction</a></li>
+<div id="myModal8" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_kidnapping_abduction.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+                     <center><h1><b> Zones Wise</b></h1></center>
+<center><li><a href="#1"  data-toggle="modal" data-target="#myModal1">Rape Cases of Women </a></li></center>
+<div id="myModal1" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/state_rape.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<center><li><a href="#"  data-toggle="modal" data-target="#myModal3">Total State wise cases </a></li></center>
+<div id="myModal3" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/state_total.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<center><li><a href="#"  data-toggle="modal" data-target="#myModal4">Kidnapping and Abduction </a></li></center>
+<div id="myModal4" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/zone_kidnap.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<center><li><a href="#"  data-toggle="modal" data-target="#myModal5">Dowry deaths </a></li></center>
+<div id="myModal5" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/zone_dowry.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+<center><li><a href="#"  data-toggle="modal" data-target="#myModal6">Importation Of Girls</a></li></center>
+<div id="myModal6" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_importation_of girls.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+<center><li><a href="#"  data-toggle="modal" data-target="#myModal7">Insult to Modesty</a></li></center>
+<div id="myModal7" class="modal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/static/year_insult_to_modesty.png" class="img-responsive" >
+        </div>
+    </div>
+  </div>
+</div>
+
+
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="rightCtn">
+                        <!-- <header>State Analysis</header> -->
+                        <div class="box">
+                            <header>Women Crime Analysis of the States</header>
+                            <p>
+                                analayze the state crime rate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- script bootstrap -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- select api -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<!-- select picker -->
+
+
 </body>
 </html>
