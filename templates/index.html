@@ -15,24 +15,39 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
+    <a class="navbar-brand" href="{{ url_for ('.home') }}">Crime Prediction and Analysis</a>
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Crime Analysis <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for ('.analysis') }}">Crime Analysis <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./state.html">States</a>
+          <a class="nav-link" href="{{ url_for ('.pred') }}">Crime Prediction</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./admin.html">Admin</a>
+          <a class="nav-link" href="{{ url_for ('.admin') }}">Admin</a>
         </li>
       </ul>
       
     </div>
   </nav> 
   
+  <div class="container">
+    <div class="myCard">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="leftCtn">
+                    <form class="myForm text-center" action="./analysis" method="POST">
+                      <h1>Home Page</h1>
+                    </form>
+                </div>
+            </div>     
+        </div> 
+      </div>
+  </div>   
+
+
 <!-- script bootstrap -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

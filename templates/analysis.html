@@ -9,41 +9,79 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../static/analysis.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="../static/state.css"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='analysis.css') }}">
+
     <title>Crime analysis and Prediction</title>
 </head>
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
-      
+        <a class="navbar-brand" href="{{ url_for ('.home') }}">Crime Prediction and Analysis</a>
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Crime Analysis <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="./state.html">States </a></a>
+              <a class="nav-link" href="{{ url_for ('.analysis') }}">Crime Analysis <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ url_for ('.pred') }}">Crime Prediction</a></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Zone</a>
+              <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
           </ul>
         </div>
-    </nav>  -->
-    {% extends "index.html" %}
-    {% block content %}
+    </nav>
+    <!-- body starts -->
 
-    <h1>this is analysis page</h1>
+ <div class="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="leftCtn">
+                        <form class="myForm text-center" action="women.html" method="POST">
+                          <label for="" class="col-md-6 form-control-label myInput" >Crime Analysis</label>
+                            <div class="col-sm-10">
+                                <a> Crime Each Year</a>
+                            </div>
+                        </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="rightCtn">
+                  <!-- <header>State Analysis</header> -->
+                  <div class="box">
+                      <header>Women Crime Analysis of the States</header>
+                      <p>
+                          analayze the state crime rate
+                      </p>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>  
 
-    {% endblock %}
 
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- script bootstrap -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- select api -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<!-- select picker -->
+
+
 </body>
 </html>

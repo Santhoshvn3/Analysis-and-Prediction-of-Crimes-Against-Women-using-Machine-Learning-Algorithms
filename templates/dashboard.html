@@ -19,17 +19,24 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
+        <a class="navbar-brand" href="{{ url_for ('.home') }}">Crime Prediction and Analysis</a>
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Crime Analysis <span class="sr-only"></span></a>
+              <a class="nav-link" href="{{ url_for ('.analysis') }}">Crime Analysis <span class="sr-only"></span></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('.pred') }}">Crime Prediction</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/admin/signup">Admin </a></a>
+              <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <li class="nav-item active ">
+                <a class="nav-link " href="{{ url_for ('.signout') }}">Signout </a></a>
+              </li>
+            </ul>
           </ul>
         </div>
     </nav> 
@@ -39,17 +46,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="leftCtn">
-                              <h1>Admin dashboard</h1> 
-                               
+                      <header>Admin dashboard</header> 
+                      <span>Click the link to add new dataset</span><br>
+                      <a href="">Add dataset</a>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="rightCtn">
-                        <!-- <header>State Analysis</header> -->
+                    <div class="rightCtn">        
                         <div class="box">
-                            
-                        </div>
-                    </div>
+                          <header>Add the new data set</header>
+                          <p>In this section admin can add new data set
+                          Click the link to add new data set.
+                        </p>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>     
@@ -66,14 +76,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 <!-- select picker -->
 <script>
-//   $(function() {
-//     $('.selectpicker').selectpicker();
-//   });
+ window.onbeforeunload = function() { alert("Your work will be lost."); };
 
-//   document.getElementById("myButton").onclick = function () {
-//     location.href = "./analysis.html";
-//   };
-// </script>
+</script>
 
 </body>
 </html>

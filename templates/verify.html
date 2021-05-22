@@ -9,8 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="../static/alogin.css"> -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='alogin.css') }}">
+    <!-- <link rel="stylesheet" href="../static/admin.css"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='admin.css') }}">
 
     <title>Crime analysis and Prediction</title>
 </head>
@@ -29,8 +29,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for ('.pred') }}">Crime Prediction</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{{ url_for ('.admin') }}">Admin </a></a>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
           </ul>
         </div>
@@ -41,50 +41,39 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="leftCtn">
-                        <form name="login_form" method="POST" class="myForm text-center">
-                            <header>Login To Account</header>
+                        <form name="verify_form" method="POST" class="myForm text-center" action="{{ url_for ('.validate') }}" onsubmit="return checkForm(this);">
+                            <header>Verify Email</header>
                                 <div class="form-group row">
-                                    <div class="col-sm-10">
-                                        <label for="" class="col-md-6 form-control-label myInput" >Email</label>
-                                        <input type="email" name="email" class="field"  required><br><br>
-                                        <!-- pattern=".+@globex.com" -->
-                                        <label for="" class="col-md-6 form-control-label myInput" >Password</label>
-                                        <input type="password" name="password" class="field" required><br><br>
-                            
-                                        <a href="{{ url_for ('.forgotPassword') }}">Forgot Password?</a>
-                                        <p class="error error--hidden">
-
-                                        </p><br>
-                            
-                                        <!-- <a href="/dashboard">Login</a> -->
+                                    <div class="col-sm-10">                                    
+                                        <label>Enter the PIN</label>
+                                        <input type="text" name="pin" class="field">
                                     </div>    
-                                    <!-- <a href="admin.html">Signup</a> -->
-                                </div>  
+                                </div>    
                                 {% with messages = get_flashed_messages(with_categories=true) %}
-                                {% if messages %}
-                                    {% for category, message in messages %}
-                                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                            <span>{{ message }}</span>
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    {% endfor %}
-                                {% endif %}
-                            {% endwith %}
-                                <input type="submit" class="butt" value="Login" id="myButton"> 
-                                <a href="/admin/signup"> <p>New User?</p>  </a>
+                                    {% if messages %}
+                                        {% for category, message in messages %}
+                                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                                <span>{{ message }}</span>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %} 
+                                <input type="submit" class="butt" value="Verify" id="myButton">     
                                 
-                        </form>           
+                        </form>         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="rightCtn">
                         <!-- <header>State Analysis</header> -->
                         <div class="box">
-                            <header>Login to the admin account</header>
+                            <header>Verify Email Address </header>
                             <p>
-                                
+                                Please Check your email.
+                               Enter the pin sent to your e-mail  
                             </p>
                         </div>
                     </div>
@@ -103,14 +92,16 @@
 <!-- select api -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 <!-- select picker -->
-<script>
-//   $(function() {
-//     $('.selectpicker').selectpicker();
-//   });
-
-//   document.getElementById("myButton").onclick = function () {
-//     location.href = "./analysis.html";
-//   };
+<script type="text/javascript">
+    function checkForm(form)
+    {
+        if(form.pin.value == "") {
+            alert("Error: Please enter the otp!");
+            form.pin.focus();
+            return false;
+        }
+    }
+    
 </script>
 
 </body>

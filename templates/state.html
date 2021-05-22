@@ -24,13 +24,14 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Crime Analysis <span class="sr-only">(current)</span></a>
-            </li>
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="./state.html">States </a></a> -->
+              <a class="nav-link" href="{{ url_for ('.analysis') }}">Crime Analysis <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/admin/signup">Admin </a></a>
+              <a class="nav-link" href="{{ url_for ('.pred') }}">Predict <span class="sr-only">(current)</span></a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
           </ul>
         </div>
@@ -78,7 +79,7 @@
                             </select>
                             </div>
                             <label for="" class="col-md-6 form-control-label myInput" >choose year</label>
-                              <select class="form-control selectpicker myInput" id="select-country" data-live-search="false" name="year">
+                              <select class="form-control selectpicker myInput" id="select-country" data-live-search="false" name="Predict_Year">
                                 <option data-tokens="2020">2020</option>
                                 <option data-tokens="2021">2021</option>
                                 <option data-tokens="2022">2022</option>
@@ -86,12 +87,14 @@
                                 <option data-tokens="2024">2024</option>
                               </select>
                               <label for="" class="col-md-6 form-control-label myInput" >choose crime type</label>
-                              <select class="form-control selectpicker myInput" id="select-country" name="crime_type" data-live-search="false">
-                                <option data-tokens=""></option>
-                                <option data-tokens=""></option>
-                                <option data-tokens=""></option>
-                                <option data-tokens=""></option>
-                                <option data-tokens=""></option>
+                              <select class="form-control selectpicker myInput" id="select-country" name="C_Type" data-live-search="true">
+                                  <option data-tokens="RAPE">Rape </option>
+                                  <option data-tokens="KIDNAPPING & ABDUCTION">Kidnapping And Abduction </option>
+                                  <option data-tokens="DOWRY DEATH">Dowary Deaths </option>
+                                  <option data-tokens="ASSAULT ON WOMEN WITH INTENT TO OUTRAGE HER MODESTY">Assult on Women </option>
+                                  <option data-tokens="INSULT TO THE MODESTY OF WOMEN">Insult To Modesty Of Women </option>
+                                  <option data-tokens="CRUELTY BY HUSBAND OR RELATIVES">Cruelty By Husband Or By Relatives<</option>
+                                  <option data-tokens="TOTAL CRIMES AGAINST WOMEN">Total Crimes Against Women </option>
                               </select>
                         </div>
                         <input type="submit" class="butt" value="Analyze" id="myButton"> 

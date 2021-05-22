@@ -19,16 +19,18 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Crime Prediction and Analysis</a>
+        <a class="navbar-brand" href="{{ url_for ('.home') }}">Crime Prediction and Analysis</a>
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Crime Analysis <span class="sr-only"></span></a>
+              <a class="nav-link" href="{{ url_for ('.analysis') }}">Crime Analysis <span class="sr-only"></span></a>
             </li>
-            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('.pred') }}">Crime Prediction</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/admin/signup">Admin </a></a>
+              <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
           </ul>
         </div>
@@ -47,7 +49,7 @@
                                         <input type="text" name="name" class="field" required><br><br>
                             
                                         <label for="" class="col-md-6 form-control-label myInput">Email</label>
-                                        <input type="email" name="email" class="field"    required><br><br>
+                                        <input type="email" name="email" class="field" required><br><br>
                             <!-- pattern=".+@globex.com" -->
                                         <label for="" class="col-md-6 form-control-label myInput">Password</label>
                                         <input type="password" name="password" class="field" required><br><br>
@@ -59,14 +61,19 @@
                                 
                                     </div>    
                                 </div>    
-                                <input type="submit" class="butt" value="Signup" id="myButton"> 
-                                {% with messages = get_flashed_messages() %}
+                                {% with messages = get_flashed_messages(with_categories=true) %}
                                     {% if messages %}
-                                        <div class="notification is-danger">
-                                            {{ messages[0] }}<br><a href="/admin/login"></a>.
-                                         </div>
+                                        {% for category, message in messages %}
+                                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                                <span>{{ message }}</span>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        {% endfor %}
                                     {% endif %}
-                                {% endwith %}
+                                {% endwith %} 
+                                <input type="submit" class="butt" value="Signup" id="myButton">     
                                 <a href="/admin/login"> <p>Already have an account?</p>  </a>
                         </form>         
                     </div>
@@ -103,17 +110,18 @@
         return re.test(str);
     }
 
+
     function checkForm(form)
     {
         if(form.name.value == "") {
             alert("Error: Username cannot be blank!");
-            form.username.focus();
+            form.name.focus();
             return false;
         }
         re = /^\w+$/;
         if(!re.test(form.name.value)) {
             alert("Error: Username must contain only letters, numbers and underscores!");
-            form.username.focus();
+            form.name.focus();
             return false;
         }
         if(form.password.value != "") {
@@ -123,8 +131,13 @@
             return false;
             }
         } 
-        return true;
+        // if(!validateEmail(form.email.value)) {
+        //     alert('Enter the valid email address');
+        //     return False;
+        // }
+        // return true;
     }
+    
 </script>
 
 </body>
