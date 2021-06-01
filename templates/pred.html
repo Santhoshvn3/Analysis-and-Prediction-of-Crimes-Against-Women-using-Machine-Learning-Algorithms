@@ -10,7 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="../static/state.css"> -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='state.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='prediction.css') }}">
 
     <title>Crime analysis and Prediction</title>
 </head>
@@ -32,6 +32,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('.about') }}">About</a>
+            </li>
           </ul>
         </div>
     </nav>
@@ -46,7 +49,7 @@
                         <header>SELECT THE INPUT</header>
                         <div class="form-group row">
                             <label for="" class="col-md-6 form-control-label myInput" >choose state</label>
-                            <div class="col-sm-10">
+                            <!-- <div class="col-sm-10"> -->
                             <select class="form-control selectpicker myInput" id="select-country" data-live-search="true" name = "state">
                                 <option value="INDIA"><h2>Select States (Default - ALL STATES)</h2> </option>
                                 <option value="INDIA"><h2>ALL STATES</h2> </option>
@@ -86,7 +89,17 @@
                                 <option value="Lakshadweep"><h2>Lakshadweep</h2> </option>
                                 <option value="Puducherry"><h2>Puducherry</h2> </option>
                             </select>
-                            </div>
+                            <label for="" class="col-md-6 form-control-label myInput" >choose crime type</label>
+                              <select class="form-control selectpicker myInput" id="select-country" name = "C_Type" data-live-search="true">
+                                <option value="RAPE"><h2>Select Crime Type (Default - Rape)</h2> </option>
+                                <option value="RAPE"><h2>Rape</h2> </option>
+                                <option value="KIDNAPPING & ABDUCTION"><h2>Kidnapping and Abduction</h2> </option>
+                                <option value="DOWRY DEATH"><h2>Dowary Deaths</h2> </option>
+                                <option value="ASSAULT ON WOMEN WITH INTENT TO OUTRAGE HER MODESTY"><h2>Assult On Women</h2> </option>
+                                <option value="INSULT TO THE MODESTY OF WOMEN"><h2>Insult To The Modesty Of Women</h2> </option>
+                                <option value="CRUELTY BY HUSBAND OR RELATIVES"><h2>Cruelty By Husband Or By Relatives</h2> </option>
+                                <option value="TOTAL CRIMES AGAINST WOMEN"><h2>Total Crime Against Women</h2> </option>
+                              </select>
                             <label for="" class="col-md-6 form-control-label myInput" >choose year</label>
                               <select class="form-control selectpicker myInput" id="select-country" data-live-search="false" name = "Predict_Year">
                                 <option value="2020">2020</option>
@@ -95,17 +108,9 @@
                                 <option value="2023">2023</option>
                                 <option value="2024">2024</option>
                               </select>
-                              <label for="" class="col-md-6 form-control-label myInput" >choose crime type</label>
-                              <select class="form-control selectpicker myInput" name = "C_Type" data-live-search="false">
-                                <option value="RAPE"><h2>Select Crime Type (Default - Rape)</h2> </option>
-                                <option value="RAPE"><h2>RAPE</h2> </option>
-                                <option value="KIDNAPPING & ABDUCTION"><h2>KIDNAPPING & ABDUCTION</h2> </option>
-                                <option value="DOWRY DEATH"><h2>DOWRY DEATH</h2> </option>
-                                <option value="ASSAULT ON WOMEN WITH INTENT TO OUTRAGE HER MODESTY"><h2>ASSAULT ON WOMEN</h2> </option>
-                                <option value="INSULT TO THE MODESTY OF WOMEN"><h2>INSULT TO THE MODESTY OF WOMEN</h2> </option>
-                                <option value="CRUELTY BY HUSBAND OR RELATIVES"><h2>CRUELTY BY HUSBAND OR RELATIVES</h2> </option>
-                                <option value="TOTAL CRIMES AGAINST WOMEN"><h2>TOTAL CRIMES AGAINST WOMEN</h2> </option>
-                              </select>
+                              
+                            <!-- </div> -->
+                            
                         </div>
                         <input type="submit" class="butt" value="Predict Crime" id="myButton">
                         </form>

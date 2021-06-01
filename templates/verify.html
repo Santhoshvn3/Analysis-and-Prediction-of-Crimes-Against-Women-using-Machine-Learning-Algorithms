@@ -32,7 +32,10 @@
             <li class="nav-item active">
               <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
-          </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('.about') }}">About</a>
+            </li>
+          </ul></p><br>
         </div>
     </nav> 
     <!-- body starts -->
@@ -62,7 +65,7 @@
                                     {% endif %}
                                 {% endwith %} 
                                 <input type="submit" class="butt" value="Verify" id="myButton">     
-                                
+                                <!-- <a href="/admin/verify/"> <p>Resend OTP</p>  </a> -->
                         </form>         
                     </div>
                 </div>
@@ -95,11 +98,19 @@
 <script type="text/javascript">
     function checkForm(form)
     {
+        // var expression = /^[a-z0-9]+$/i;
+        var otp = form.pin.value;
         if(form.pin.value == "") {
             alert("Error: Please enter the otp!");
             form.pin.focus();
             return false;
         }
+        if(!form.pin.value.match(/^[0-9a-z]+$/)) {
+            alert("Error: Please enter the valid otp!");
+            form.pin.focus();
+            return false;
+        }
+
     }
     
 </script>

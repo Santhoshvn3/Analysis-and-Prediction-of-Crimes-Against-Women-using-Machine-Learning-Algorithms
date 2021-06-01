@@ -11,7 +11,7 @@
 
 <body>
 	<center>
-		<center><h3 style="color: red;">{{msg}}</h3></center>
+		<center><h3 style="color: black;">{{msg}}</h3></center>
 		<br>
 		
 		<h3>"{{C_type}}" Cases in {{state}} upto Year {{year}}</h3>
@@ -35,39 +35,42 @@
             type: 'bar',
             label: C_type,
             data: counts,
-            backgroundColor: 'grey'
+            backgroundColor: '#4488f0'
            },{
             type: 'line',
             label: C_type,
             fill: false,
             borderWidth: 4,
             data: counts,
-            borderColor: 'red'
+            borderColor: 'black'
            }]
   	  },
 	options:{
 		responsive: true,
 		title:{
 			display:true,
-			fontSize:25
+			fontSize:25,
+
 		},
 		scales: {
 			yAxes: [{
 			scaleLabel: {
 				display: true,
-				labelString: 'Number Of Crimes'
+				labelString: 'Number Of Crimes',
+				fontColor: "#000000"
 			},
 			ticks: {
-                  fontColor: "red", // this here
+                  fontColor: "black", // this here
             },
 			}],
 			xAxes: [{
 			scaleLabel: {
 				display: true,
-				labelString: 'Years'
+				labelString: 'Years',
+				fontColor: "#000000"
 			},
 			ticks: {
-                  fontColor: "red", // this here
+                  fontColor: "black", // this here
             },
 			}]
 		} ,

@@ -39,6 +39,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('.about') }}">About</a>
+            </li>
           </ul>
         </div>
     </nav>
@@ -50,9 +53,21 @@
                 <div class="col-md-6">
                     <div class="leftCtn">
                         <form class="myForm text-center" action="women.html" method="POST">
-                          <label for="" class="col-md-6 form-control-label myInput" >Crime Analysis</label>
-                            <div class="col-sm-10">
-                                <a> Crime Each Year</a>
+                          <label for="" class=" myInput" >Crime Analysis</label><br>
+                            <!-- <div class="col-sm-10"> -->
+                              <div class="form-group row">
+                                <a href="#"  data-target="#myModal" target="_blank">Crime Each Year </li>
+                                  <!-- <div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> -->
+                                    <!-- <div class="modal-dialog"> -->
+                                      <!-- <div class="modal-content"> -->
+                                          <!-- <div class="modal" id="myModal"> -->
+                                              <img src="{{url_for('static', filename='crime_each_year.png')}}" class="img-responsive" id="myModal" >
+                                          <!-- </div> -->
+                                      <!-- </div> -->
+                                    <!-- </div> -->
+                                  <!-- </div> -->
+                                </a>
+                            <!-- </div> -->
                             </div>
                         </form>
                 </div>

@@ -7,7 +7,7 @@
 .container {
     position: absolute;
     max-width: 800px;
-    height: 500px;
+    height: 550px;
     margin: auto;
     top: 58%;
     left: 50%;
@@ -33,8 +33,8 @@
     border-radius: 25px;
     height: 100%;
     padding: 25px;
-    padding-top: 40px;
-    padding-left: 50px;
+    padding-top: 60px;
+    padding-left: 70px;
 }
 
 .leftCtn header {
@@ -43,7 +43,8 @@
     font-size: 20px;
     font-weight: 700;
     padding-left: 40px;
-    margin-bottom: 40px;
+    /* margin-top: 10px; */
+    margin-bottom: 30px;
 }
 
 .row {
@@ -72,7 +73,7 @@
 }
 
 .leftCtn .myInput {
-    width: 220px;
+    width: 230px;
     border-radius: 25px;
     padding: 10px;
     padding-left: 40px;

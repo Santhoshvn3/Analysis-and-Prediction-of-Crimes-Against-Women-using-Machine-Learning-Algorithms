@@ -32,6 +32,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="{{ url_for ('.admin') }}">Admin </a></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('.about') }}">About</a>
+              </li>
           </ul>
         </div>
     </nav> 
@@ -51,7 +54,7 @@
                                         <label for="" class="col-md-6 form-control-label myInput" >Password</label>
                                         <input type="password" name="password" class="field" required><br><br>
                             
-                                        <a href="{{ url_for ('.forgotPassword') }}">Forgot Password?</a>
+                                        <a href="/admin/forgotpassword/">Forgot Password?</a>
                                         <p class="error error--hidden">
 
                                         </p><br>
